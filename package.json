@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "build": "next build",
+    "build:ci": "npm run lint && next build"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "mongodb": "^7.0.0",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"

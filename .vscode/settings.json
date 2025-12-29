@@ -1,0 +1,6 @@
+{
+    "chat.agent.enabled": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "{   \"editor.quickSuggestions\": false,   \"editor.suggestOnTriggerCharacters\": false,   \"editor.inlineSuggest.enabled\": false,   \"javascript.suggest.enabled\": false,   \"typescript.suggest.enabled\": false,   \"github.copilot.enable\": false,   \"github.copilot.inlineSuggest.enable\": false }"
+    ]
+}
