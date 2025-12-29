@@ -11,13 +11,17 @@ export const dynamic = 'force-dynamic';
 
 export default  function ShoppingCart({initialCartProducts}:{initialCartProducts:Product[]}) {
      const [cartProduct,setCartProducts] = useState(initialCartProducts)
-
+    const corsHeaders = {
+  "Access-Control-Allow-Origin": `${process.env.NEXT_PUBLIC_BASE_URL}`,
+  "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
     async function removeCart(productId:string) {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user/1/cart`, {
         method: 'DELETE',
         body: JSON.stringify({ productId }),
-        headers: { 'Content-Type': 'application/json' }
+        headers: corsHeaders
       });
 
       if (!response.ok) throw new Error(`Request failed: ${response.status}`);
